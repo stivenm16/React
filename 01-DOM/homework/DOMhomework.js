@@ -8,9 +8,9 @@ let toDoItems = []
 // agregar tu nombre al final del texto actual. Ej: 'Aplicación creada por Franco'
 // Tu código acá:
 
-let createdBy = document.querySelector('#createdBy')
 let user = 'Kevin'
-createdBy.innerHTML = `Aplicación creada por ${user}`
+let createdBy = document.querySelector('#createdBy')
+createdBy.innerHTML = `${createdBy.innerHTML} ${user}`
 
 
 // Crear una clase denominada 'ToDo' cuyo constructor debe recibir un único parámetro del tipo string
@@ -22,8 +22,8 @@ createdBy.innerHTML = `Aplicación creada por ${user}`
 
 function ToDo (description) {
   // Tu código acá:
-    description: description
-    complete: false
+    this.description = description
+    this.complete = false
 }
 
 ToDo.prototype.completeToDo = function() {
@@ -59,11 +59,13 @@ function buildToDo(todo, index) {
   // Tu código acá:
 
   let toDoShell = document.createElement('div')
+
   toDoShell.setAttribute('class', 'toDoShell')
+
   let toDoText = document.createElement('span')
   
-  toDoText.innerHTML = todo[description]
-  toDoShell.setAttribute('id', index)
+  toDoText.innerHTML = todo.description
+  toDoText.setAttribute('id', index)
 
   if(todo.complete){
 
@@ -71,6 +73,8 @@ function buildToDo(todo, index) {
   } 
 
   toDoShell.appendChild(toDoText)
+  
+  return toDoShell
 
 }
 
