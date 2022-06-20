@@ -65,9 +65,16 @@ function buildToDo(todo, index) {
   toDoText.innerHTML = todo[description]
   toDoShell.setAttribute('id', index)
 
+  if(todo.complete){
 
+    toDoText.setAttribute('class', 'completeText')
+  } 
+
+  toDoShell.appendChild(toDoText)
 
 }
+
+
 
 // La función 'buildToDos' debe crear un array de objetos toDo y devolverlo
 // Recibirá como parámetro un array de objetos ToDo
