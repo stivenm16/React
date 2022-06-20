@@ -26,7 +26,9 @@ function ToDo (description) {
     complete: false
 }
 
-
+ToDo.prototype.completeToDo = function() {
+  this.complete = true
+}
 // Agregar un método denominado 'completeToDo' al prototipo de la clase ToDo
 // No requiere ningún argumento
 // Debe setear el atributo 'complete' del ToDo en true
