@@ -8,6 +8,9 @@ let toDoItems = []
 // agregar tu nombre al final del texto actual. Ej: 'Aplicación creada por Franco'
 // Tu código acá:
 
+let createdBy = document.querySelector('#createdBy')
+let user = 'Kevin'
+createdBy.innerHTML = `Aplicación creada por ${user}`
 
 
 // Crear una clase denominada 'ToDo' cuyo constructor debe recibir un único parámetro del tipo string
@@ -17,9 +20,10 @@ let toDoItems = []
 // 2) 'complete'    : debe setearse en false
 // Ayuda: usar 'this' en el constructor
 
-function ToDo () {
+function ToDo (description) {
   // Tu código acá:
-
+    description: description
+    complete: false
 }
 
 
