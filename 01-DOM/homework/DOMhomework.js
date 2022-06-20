@@ -58,6 +58,15 @@ ToDo.prototype.completeToDo = function() {
 function buildToDo(todo, index) {
   // Tu código acá:
 
+  let toDoShell = document.createElement('div')
+  toDoShell.setAttribute('class', 'toDoShell')
+  let toDoText = document.createElement('span')
+  
+  toDoText.innerHTML = todo[description]
+  toDoShell.setAttribute('id', index)
+
+
+
 }
 
 // La función 'buildToDos' debe crear un array de objetos toDo y devolverlo
