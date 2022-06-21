@@ -1,6 +1,8 @@
 // Crear un array vacío llamado 'toDoItems'
 // Tu codigo acá:
 
+const { buildArgv } = require("jest-cli/build/cli")
+
 let toDoItems = []
 
 // En la página 'index.html' hay un elemento span cuyo texto es 'Aplicación creada por:'.
@@ -87,7 +89,8 @@ function buildToDo(todo, index) {
 
 function buildToDos(toDos) {
   // Tu código acá:
-
+  let arr = toDos.map(function(todo, index) {return buildToDo(todo, index)})
+  return arr
 }
 
 
@@ -102,6 +105,14 @@ function buildToDos(toDos) {
 
 function displayToDos() {
   // Tu código acá:
+  let toDoContainer = document.getElementById('toDoContainer')
+  toDoContainer.innerHTML = ""
+
+  let result = buildToDos(toDoItems)
+
+  for (let i = 0; i < result.length; i++) {
+    toDoContainer.appendChild(result[i])    
+  }
 
 }
 
@@ -115,8 +126,13 @@ function displayToDos() {
 //  3) Setear el valor del input toDoInput como un string vacio ("") (Esto se realiza para que en la vista se borre lo que se encontraba escrito)
 //  4) Llamar a la función displayToDos para que se actualicen los toDos mostrados en pantalla
 
-function addToDo() {
+function addToDo(toDoInput) {
   // Tu código acá:
+  // let toDoInput = new ToDo()
+  // toDoInput.value = ""
+
+  toDoItems.push(toDoInput)
+
 
 }
 
@@ -164,7 +180,7 @@ function completeToDo(event) {
 
 
 // Acá debes insertar la llamada a 'displayToDos'
-
+displayToDos()
 
 // ---------------------------- NO CAMBIES NADA DE ACÁ PARA ABAJO ----------------------------- //
 if (typeof module !== 'undefined') {
