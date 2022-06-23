@@ -12,13 +12,13 @@ var traverseDomAndCollectElements = function(matchFunc, startEl = document.body)
   // TU CÓDIGO AQUÍ
   // if(matchFunc(startEl)) resultSet.push(startEl)
 
-  // for (let i = 0; i < startEl.children.length; i++) {
-  //   let result = traverseDomAndCollectElements(matchFunc, startEl.children[i])
-  //   resultSet = [...resultSet, ...result]
+  for (let i = 0; i < startEl.children.length; i++) {
+    let result = traverseDomAndCollectElements(matchFunc, startEl.children[i])
+    resultSet = [...resultSet, ...result]
     
-  // }
+  }
 
-  // return resultSet
+  return resultSet
 };
 
 // Detecta y devuelve el tipo de selector
