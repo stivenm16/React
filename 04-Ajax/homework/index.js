@@ -11,13 +11,27 @@ $('#boton').click(()=>{    // Asignamos un evento de click al boton con ID# BOTO
     })
 })
 
+
 $('#search').click(()=>{
-    $('#amigo').empty()
+    
     let input = $('#input').val()
 
     $.get(`http://localhost:5000/amigos/${input}`, res =>{ 
     
     $('#amigo').text(res.name)
 
+    })
+})
+
+
+
+$('#delete').click(()=>{
+    var id = $('#inputDelete').val()
+    $.ajax({
+        url:`http://localhost:5000/amigos/${id}`,
+        type : 'DELETE',
+        success: () =>{
+        $('#success').text(`Amigo numero ${id} perma ban`)
+        }
     })
 })
