@@ -42,35 +42,35 @@ var selectorTypeMatcher = function(selector) {
 // matchea el selector.
 
 var matchFunctionMaker = function(selector) {
-  // var selectorType = selectorTypeMatcher(selector);
-  // var matchFunction;
-  // if (selectorType === "id") { 
-  //   matchFunction = function(el) {
-  //     return '#' + el.id === selector
-  //   }
+  var selectorType = selectorTypeMatcher(selector);
+  var matchFunction;
+  if (selectorType === "id") { 
+    matchFunction = function(el) {
+      return '#' + el.id === selector
+    }
    
-  // } else if (selectorType === "class") {
-  //   matchFunction = function(el){
-  //     for (let i = 0; i < el.classList.length; i++) {
-  //       if( '.' + el.classList[i] === selector) return true
-  //     }
-  //     return false
-  //   }
+  } else if (selectorType === "class") {
+    matchFunction = function(el){
+      for (let i = 0; i < el.classList.length; i++) {
+        if( '.' + el.classList[i] === selector) return true
+      }
+      return false
+    }
     
-  // } else if (selectorType === "tag.class") {
-  //   matchFunction = function (el) {
-  //     let [t, c] = selector.split('.')
+  } else if (selectorType === "tag.class") {
+    matchFunction = function (el) {
+      let [t, c] = selector.split('.')
 
-  //     return matchFunctionMaker(t)(el) && matchFunctionMaker('.' + c)(el)
-  //   }
+      return matchFunctionMaker(t)(el) && matchFunctionMaker('.' + c)(el)
+    }
     
-  // } else if (selectorType === "tag") {
-  //   matchFunction = function(el){
-  //     return el.tagName === selector.toUpperCase();
-  //   }
+  } else if (selectorType === "tag") {
+    matchFunction = function(el){
+      return el.tagName === selector.toUpperCase();
+    }
     
-  // }
-  // return matchFunction;
+  }
+  return matchFunction;
 };
 
 var $ = function(selector) {
