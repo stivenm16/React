@@ -27,13 +27,13 @@ var traverseDomAndCollectElements = function(matchFunc, startEl = document.body)
 
 var selectorTypeMatcher = function(selector) {
   // tu código aquí
-  // if(selector[0] === '#') return 'id'  
-  // if(selector[0] === '.') return 'class'  
-  // for (let i = 0; i < selector.length; i++) {
-  //   if(selector[i] === '.') return 'tag.class'
+  if(selector[0] === '#') return 'id'  
+  if(selector[0] === '.') return 'class'  
+  for (let i = 0; i < selector.length; i++) {
+    if(selector[i] === '.') return 'tag.class'
     
-  // }
-  // return 'tag'
+  }
+  return 'tag'
 };
 
 // NOTA SOBRE LA FUNCIÓN MATCH
