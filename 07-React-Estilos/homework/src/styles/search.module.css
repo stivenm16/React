@@ -1,0 +1,38 @@
+.container {
+    margin: 2rem;
+}
+
+.input {
+    border-radius: 5px;
+    margin-right: .5rem ;
+    /* border: rgba(128, 128, 128, 0.245) solid 1px; */
+    background-color: rgba(207, 205, 205, 0.158);
+    border: none;
+    transition: 2s;
+}
+.input:focus{
+    outline: none;
+    border: none;
+    background-color: rgba(207, 205, 205, 0.781);
+}
+
+.btn {
+    border-radius: 5px;
+    border: rgba(128, 128, 128, 0.245) solid 1px;   
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+    outline: none;
+    
+
+}
+
+.btn:hover {
+    background-color: rgba(207, 32, 32, 0.846);
+}
+
+.btn:focus{
+    outline: none;
+}
+
