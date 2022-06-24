@@ -1,7 +1,7 @@
 // Crear un array vacío llamado 'toDoItems'
 // Tu codigo acá:
 
-const { buildArgv } = require("jest-cli/build/cli")
+// const { buildArgv } = require("jest-cli/build/cli")
 
 let toDoItems = []
 
@@ -74,8 +74,9 @@ function buildToDo(todo, index) {
     toDoText.setAttribute('class', 'completeText')
   } 
 
+
   toDoShell.appendChild(toDoText)
-  
+  toDoText.addEventListener('click', completeToDo)
   return toDoShell
 
 }
@@ -126,13 +127,18 @@ function displayToDos() {
 //  3) Setear el valor del input toDoInput como un string vacio ("") (Esto se realiza para que en la vista se borre lo que se encontraba escrito)
 //  4) Llamar a la función displayToDos para que se actualicen los toDos mostrados en pantalla
 
-function addToDo(toDoInput) {
+function addToDo(toDoInput = "") {
   // Tu código acá:
-  // let toDoInput = new ToDo()
-  // toDoInput.value = ""
+  let input = document.querySelector('#toDoInput')
+  if(input.value !== ""){
+    let nuevoToDo = new ToDo(input.value)
+    toDoItems.push(toDoInput)
 
-  toDoItems.push(toDoInput)
-
+    input.value = ""
+    displayToDos()
+  } else {
+    alert('Input vacio')
+  }
 
 }
 
@@ -141,7 +147,10 @@ function addToDo(toDoInput) {
 //   1) Seleccionar el elemento cuyo id es 'addButton'
 //   2) Agregarle un 'click' event listener, pasándole la función 'addToDo' como callback
 
-// Tu código acá:
+// Tu código acá: 
+// let addBtn = document.getElementById('addButton')
+// addEventListener.addBtn('click', addToDo)
+document.querySelector('#addButton').addEventListener('click', addToDo)
 
 
 // La función completeToDo se va a ejecutar cuando queramos completar un todo
@@ -158,9 +167,9 @@ function addToDo(toDoInput) {
 
 function completeToDo(event) {
   // DESCOMENTAR LA SIGUIENTE LINEA
-  // const index = event.target.id;
+  const index = event.target.id;
   // Tu código acá:
-
+  toDoItems[index].completeToDo()
 }
 
 // Una vez que llegaste a este punto verificá que todos los tests pasen
