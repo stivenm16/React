@@ -8,7 +8,7 @@ export default function App() {
   function onSearch(ciudad) {
 
     const apiKey = '4a34d196e48d4aa8b9b537136715f679'
-    
+
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
@@ -33,12 +33,16 @@ export default function App() {
       });
 
     }
+    
+    function onClose(id) {
+      setCities(oldCities => oldCities.filter(c => c.id != id));
+    }
 
   return (
     <div className="App">
       <Nav onSearch={onSearch}/>
 
-      <Cards/>
+      <Cards cities={cities} onClose={onClose}/>
       
     </div>
   );
