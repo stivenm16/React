@@ -12,7 +12,8 @@ export default function App() {
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
-        if(recurso.main !== undefined){
+        
+        if(recurso.main !== undefined ){
           const ciudad = {
             min: Math.round(recurso.main.temp_min),
             max: Math.round(recurso.main.temp_max),
@@ -26,10 +27,12 @@ export default function App() {
             latitud: recurso.coord.lat,
             longitud: recurso.coord.lon
           };
+          
           setCities(oldCities => [...oldCities, ciudad]);
         } else {
           alert("Ciudad no encontrada");
         }
+        
       });
 
     }
@@ -38,11 +41,15 @@ export default function App() {
       setCities(oldCities => oldCities.filter(c => c.id != id));
     }
 
+
+    let filteredCities = cities.filter((thing, index, self) => index === self.findIndex(t => (t.id === thing.id)))
+    console.log(filteredCities)
+
   return (
     <div className="App">
       <Nav onSearch={onSearch}/>
-
-      <Cards cities={cities} onClose={onClose}/>
+      
+      <Cards cities={filteredCities} onClose={onClose}/>
       
     </div>
   );
