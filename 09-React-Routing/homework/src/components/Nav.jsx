@@ -1,20 +1,19 @@
 import React from 'react';
-import Logo from '../img/logoHenry.png'
+import Logo from '../logoHenry.png'
 import SearchBar from './SearchBar.jsx';
 import './Nav.css';
 
-
 function Nav({onSearch}) {
   return (
-    <nav className="navbar navbar-dark bg-dark">
-        <span className="navbar-brand">
-          <img id="logoHenry" src={Logo} width="30" height="30" className="d-inline-block align-top" alt="" />
-          Henry - Weather App
-        </span>
-        <SearchBar
-          onSearch={onSearch}
-        />
-    </nav>
+    <div className="header">
+      <div className='left-container' >
+        <img src={Logo} alt="Logo soyHenry" />
+        <h2>Henry - Weather App</h2>
+      </div>
+      <span className="searchBar">
+      <SearchBar onSearch={onSearch}/>
+      </span>
+    </div>
   );
 };
 
