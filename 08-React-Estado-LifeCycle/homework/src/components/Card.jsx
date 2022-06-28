@@ -13,12 +13,12 @@ export default function Card(props) {
       
       <div className='minTemp'>
         <p>Min</p>
-        <p>{props.min}</p>
+        <p>{props.min}°</p>
       </div>
 
       <div className='maxTemp'>
         <p>Max</p>
-        <p>{props.max}</p>
+        <p>{props.max}°</p>
       </div>
 
       <img src={`http://openweathermap.org/img/wn/${props.img}@2x.png`} alt="image not found" className='img'/>

@@ -5,6 +5,7 @@ import Cards from './components/Cards.jsx';
 
 export default function App() {
   const [cities, setCities] = useState([]);
+  const [repeated, setRepeated] = useState(false)
   function onSearch(ciudad) {
 
     const apiKey = '4a34d196e48d4aa8b9b537136715f679'
@@ -13,7 +14,7 @@ export default function App() {
       .then(r => r.json())
       .then((recurso) => {
         
-        if(recurso.main !== undefined ){
+        if(recurso.main !== undefined && repeated == false){
           const ciudad = {
             min: Math.round(recurso.main.temp_min),
             max: Math.round(recurso.main.temp_max),
@@ -29,6 +30,7 @@ export default function App() {
           };
           
           setCities(oldCities => [...oldCities, ciudad]);
+          setRepeated(true)
         } else {
           alert("Ciudad no encontrada");
         }
@@ -42,14 +44,14 @@ export default function App() {
     }
 
 
-    let filteredCities = cities.filter((thing, index, self) => index === self.findIndex(t => (t.id === thing.id)))
-    console.log(filteredCities)
+    // let filteredCities = cities.filter((thing, index, self) => index === self.findIndex(t => (t.id === thing.id)))
+    
 
   return (
     <div className="App">
       <Nav onSearch={onSearch}/>
       
-      <Cards cities={filteredCities} onClose={onClose}/>
+      <Cards cities={cities} onClose={onClose}/>
       
     </div>
   );
