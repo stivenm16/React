@@ -44,11 +44,9 @@ export default function App() {
       setCities(oldCities => oldCities.filter(c => c.id !== id));
     }
 
-
     let filteredCities = cities.filter((thing, index, self) => index === self.findIndex(t => (t.id === thing.id)))
+    // 
     
-    
-
   return (
     <div className="App">
       <Nav onSearch={onSearch}/>
