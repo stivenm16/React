@@ -21,7 +21,7 @@ export default function Card(props) {
         <p>{props.max}°</p>
       </div>
 
-      <img src={`http://openweathermap.org/img/wn/${props.img}@2x.png`} alt="image not found" className='img'/>
+      <img src={`http://openweathermap.org/img/wn/${props.img}@2x.png`} alt="Not found" className='img'/>
       
     </div>
   </div>)
