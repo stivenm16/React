@@ -40,7 +40,7 @@ export default function App() {
     }
     
     function onClose(id) {
-      setCities(oldCities => oldCities.filter(c => c.id != id));
+      setCities(oldCities => oldCities.filter(c => c.id !== id));
     }
 
 
