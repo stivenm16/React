@@ -14,7 +14,7 @@ export default function App() {
       .then(r => r.json())
       .then((recurso) => {
         
-        if(recurso.main !== undefined && repeated == false){
+        if(recurso.main !== undefined && repeated === false){
           const ciudad = {
             min: Math.round(recurso.main.temp_min),
             max: Math.round(recurso.main.temp_max),
