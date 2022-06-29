@@ -3,9 +3,6 @@ import './City.css';
 
 function City({city}) {
     
-    
-
-
     return(
         <div className="container">
             <p className="title">{city.name}</p>
