@@ -31,11 +31,11 @@ export default function  Form() {
       <form onSubmit={handleSubmit}>
       <div>
         <label>Username: </label>
-        <input type="text" name="username" onChange={handleInputChange} value={username} />
+        <input type="text" name="username" onChange={handleInputChange} value={input[username]} />
       </div>
       <div>
         <label>Password: </label>
-        <input type="text" name="password" onChange={handleInputChange} value={password} />
+        <input type="text" name="password" onChange={handleInputChange} value={input[password]} />
       </div>
       <input type='submit' value='submit'>Submit!</input>
     </form>
