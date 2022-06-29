@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import './SearchBar.css';
 
 export default function SearchBar({onSearch}) {
-  
-  const [city, setCity] = useState('')
+  const [city, setCity] = useState("");
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
@@ -12,11 +10,10 @@ export default function SearchBar({onSearch}) {
       <input
         type="text"
         placeholder="Ciudad..."
-        className="input"
         value={city}
-        onChange={(e) => setCity(e.target.value)}
+        onChange={e => setCity(e.target.value)}
       />
-      <input type="submit" value="Agregar" className="submit"/>
+      <input type="submit" value="Agregar" />
     </form>
   );
 }

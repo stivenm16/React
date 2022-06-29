@@ -1,29 +1,3 @@
 #logoHenry {
   margin-right: 20px;
 }
-
-.header{
-  display: flex;
-  /* margin: 2rem; */
-  background-color: rgba(0, 0, 0, 0.781);
-}
-
-h2 {
-  color: #FFF;
-  font-size: 22px;
-  padding-top: 1.5rem;
-}
-
-.left-container {
-  display: flex;
-}
-
-.searchBar {
-  margin-top: 1.5rem ;
-  margin-left: auto ;
-  margin-right: 1rem;
-}
-
-img {
-  padding: 1rem;
-}
