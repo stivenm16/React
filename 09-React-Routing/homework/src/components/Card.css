@@ -1,11 +1,27 @@
 .card {
   margin: 20px;
   width: 18rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 28px 6px rgba(0,0,0,0.15);
+  border: none;
 }
 
 .card-title {
   margin-bottom: 15px;
+  color: black;
+  text-decoration: none;
+  transition: .5s;
 }
+
+.card-title:hover{
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+h5{
+  margin-bottom: 1.5rem;
+}
+
 
 #closeIcon {
   display: flex;
