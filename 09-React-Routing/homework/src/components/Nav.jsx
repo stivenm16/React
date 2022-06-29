@@ -14,7 +14,7 @@ function Nav({onSearch}) {
           Henry - Weather App
         </span>
       </Link>
-      <Link to='/about'>
+      <Link to='/about' className='about'>
         <span>About</span>
       </Link>
         <SearchBar

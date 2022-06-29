@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
+import { BrowserRouter, Route } from "react-router-dom";
+
+
 import Nav from './components/Nav.jsx';
+import About from './components/About.jsx';
+import City from './components/City.jsx';
 import Cards from './components/Cards.jsx';
+
 
 export default function App() {
   const [cities, setCities] = useState([]);

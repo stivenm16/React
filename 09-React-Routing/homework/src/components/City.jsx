@@ -1,10 +1,9 @@
 import React from "react";
 import './City.css';
 
-function City({cities}) {
+function City({city}) {
     
-    const city = cities[cities.length - 1]
-    console.log(city)
+    
 
 
     return(
