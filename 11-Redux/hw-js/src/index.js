@@ -34,6 +34,6 @@ const btnSum = document.getElementById('incremento')
 const btnRmv = document.getElementById('decremento')
 
 
-btnSum.addEventListener('click', store.dispatch(incremento))
-btnRmv.addEventListener('click', store.dispatch(decremento))
+btnSum.onclick = () => store.dispatch(incremento())
+btnRmv.onclick = () => store.dispatch(decremento())
 // hagan un dispatch al store de la accion correspondiente:

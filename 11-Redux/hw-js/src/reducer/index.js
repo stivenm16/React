@@ -18,8 +18,8 @@ function contador(state = initialState, action) {
         return {
           contador: state.contador - 1
         }
-        default:
-          return state
+      default:
+        return state
   }
 }
 
