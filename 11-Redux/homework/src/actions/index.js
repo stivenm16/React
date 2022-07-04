@@ -8,8 +8,16 @@ export const DECREMENT = 'DECREMENT';
 
 export const increment = () => {
   // Completa la funcion
+  console.log('incremento funciona')
+  
+  return {
+    type: INCREMENT
+  }
 };
 
 export const decrement = () => {
   // Completa la funcion
+  return {
+    type: DECREMENT
+  }
 };

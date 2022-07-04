@@ -6,6 +6,9 @@ const { INCREMENTO, DECREMENTO } = require('../action-types');
 // Eso se lo deja al reducer(s).
 
 const incremento = () => {
+  
+  console.log('incremento funciona')
+  
   return {
     type: INCREMENTO
   }
