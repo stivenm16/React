@@ -11,11 +11,11 @@ export default (state = initialState, action) => {
   switch(action.type) {
     case INCREMENT:
       return {
-        contador: state.contador + 1
+        count: state.count + 1
       }
       case DECREMENT:
         return {
-          contador: state.contador - 1
+          count: state.count - 1
         }
         default:
           return state
