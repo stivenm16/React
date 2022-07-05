@@ -1,8 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { addMovieFavorite, removeMovieFavorite, getMovieDetail, getMovies } from "../../actions";
 import './Buscador.css';
 
+function mapStateToProps(state) {
+  return {
+    movies: state.moviesLoaded      
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addMovieFavorite: movie => dispatch(addMovieFavorite(movie)),
+    getMovies: titulo => dispatch(getMovies(titulo)),
+    removeMovieFavorite: imdbID => dispatch(removeMovieFavorite(imdbID)),
+    getMovieDetail: imdbID=> dispatch(getMovieDetail(imdbID))      
+
+  } 
+}
 
 
 export class Buscador extends Component {
@@ -13,12 +29,15 @@ export class Buscador extends Component {
     };
   }
   handleChange(event) {
+
     this.setState({ title: event.target.value });
   }
   handleSubmit(event) {
     event.preventDefault();
   }
 
+
+  
   render() {
     const { title } = this.state;
     return (
@@ -44,5 +63,5 @@ export class Buscador extends Component {
     );
   }
 }
+export default connect(mapStateToProps, mapDispatchToProps)(Buscador);
 
-export default Buscador;
