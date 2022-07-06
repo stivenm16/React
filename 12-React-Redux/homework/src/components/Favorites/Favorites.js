@@ -18,7 +18,7 @@ export class ConnectedList extends Component {
                 <Link to={`/movie/${movie.id}`}>Titulo: {movie.title}</Link>
                 
                   
-                <button onClick={() => this.props.removeMovieFavorite(movie.imdbID)}>X</button>
+                <button onClick={() => this.props.removeMovieFavorite(movie.id)}>X</button>
               </li>
             )
           })}

@@ -14,7 +14,7 @@ const initialState = {
             case "REMOVE_MOVIE_FAVORITE":
                 return {
                     ...state,
-                    moviesFavourites: state.moviesFavourites.filter(e=>e.imdbID !== action.imdbID)
+                    moviesFavourites: state.moviesFavourites.filter(e=>e.id != action.id)
                 };
             case "GET_MOVIES":
                 return {

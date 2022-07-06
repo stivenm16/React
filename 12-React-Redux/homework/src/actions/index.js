@@ -4,8 +4,8 @@ export function addMovieFavorite(payload) {
     return { type: "ADD_MOVIE_FAVORITE", payload };
   }
 
-export function removeMovieFavorite(payload) {
-    return { type: "REMOVE_MOVIE_FAVORITE", payload };
+export function removeMovieFavorite(id) {
+    return { type: "REMOVE_MOVIE_FAVORITE", id };
   }
   
 export function getMovies(titulo) {
