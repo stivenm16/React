@@ -25,6 +25,7 @@ _cache
 .env.production.local
 
 README.md
+readme.txt
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
